@@ -1,3 +1,12 @@
 # react-mobx-demo
 
-Describe react-mobx-demo here.
+Demo of React-MobX-GraphQL stack project.
+
+# Tech Stack
+
+* nwb https://github.com/insin/nwb
+* React
+* MobX
+* MobX-State-Tree
+* GraphQL
+* Apollo Client

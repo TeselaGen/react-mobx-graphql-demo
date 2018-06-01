@@ -1,8 +1,9 @@
-import './index.css'
+import * as React from "react";
+import { render } from "react-dom";
 
-import React from 'react'
-import {render} from 'react-dom'
+import { StudiesList } from "./components/StudiesList";
+import { StudyStore } from "./models/StudiesStore";
 
-import App from './App'
+const store = StudyStore.create();
 
-render(<App/>, document.querySelector('#app'))
+render(<StudiesList studiesStore={store} />, document.getElementById("app"));
