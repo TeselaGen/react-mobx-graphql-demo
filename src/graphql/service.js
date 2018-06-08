@@ -1,7 +1,13 @@
-import ApolloClient, { gql } from "apollo-boost";
+//import ApolloClient from "apollo-boost";
+import gql from "graphql-tag";
+import { GraphQLClient } from "graphql-request";
 
-const client = new ApolloClient({
+const uri = "http://localhost:3030/graphql";
+/* const client = new ApolloClient({
   uri: "http://localhost:3030/graphql"
-});
+}); */
 
-export { client, gql };
+const client = new GraphQLClient(uri, { cache: "no-cache" });
+const clientWithCache = new GraphQLClient(uri, { cache: "default" });
+
+export { client, clientWithCache, gql };

@@ -1,10 +1,8 @@
-import { client } from "./service";
+import { clientWithCache } from "./service";
 
 export const query = async fragment => {
-  const resp = await client.query({
-    query: fragment,
-    fetchPolicy: "network-only"
-  });
-  const key = Object.keys(resp.data);
-  return resp.data[key[0]]["results"];
+  const resp = await clientWithCache.request(fragment);
+  const data = resp;
+  const key = Object.keys(data);
+  return data[key[0]]["results"];
 };
